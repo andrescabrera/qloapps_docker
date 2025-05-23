@@ -1,3 +1,8 @@
+How to build that image:
+
+docker build -t qloapps_apache_php .
+docker tag qloapps_apache_php:latest andrescabrera/qloapps_apache_php:latest
+
 ## WHAT IS QLOAPPS
 
 Qloapps is an open source, free and customizable online reservation system. You can launch a userfriendly site and can manage online as well as offline bookings. Using this you can easily launch your hotel booking website and even manage your offline booking too. This package is developed on top of Prestashop 1.6.
