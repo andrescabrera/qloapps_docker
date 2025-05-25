@@ -1,7 +1,18 @@
-How to build that image:
+# Qloapps custom docker
+
+This is a fork of official bloated docker that carry with PHP, MYSQL, OPENSSH
+
+https://hub.docker.com/r/webkul/qloapps_docker
+
+Without all that bloat, just Apache, PHP and Certbot, wich im using on a 1gb instances on Oracle Free Tier.
+
+## How to build that image to your custom repo
 
 docker build -t qloapps_apache_php .
 docker tag qloapps_apache_php:latest andrescabrera/qloapps_apache_php:latest
+
+## My own public repo
+docker pull andrescabrera/qloapps_apache_php
 
 ## WHAT IS QLOAPPS
 
