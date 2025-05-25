@@ -28,14 +28,6 @@ Docker is an open-source project that can be integrated with almost all the appl
 
 > Check if your user has access privileges to run docker commands.
 
-#### NOTE TO THE USER
-
-> Mysql root password, Mysql Database name and SSH user password is not set. Users have to pass *Mysql root password, database name, and SSH user password* as arguments while running the docker image.
-
-> Default SSH user is created as "qloapps" while building this image. You can change user argument in Dockerfile and rebuild the docker image for your own use.
-
-> 
-
 
 ## DOCKERIZING QLOAPPS
 
@@ -43,11 +35,7 @@ In the dockerized Qloapps architecture, we are using:
 
 > Ubuntu 18.04
 
-> Mysql Server 5.7
-
 > PHP 7.2
-
-> SSH Server
 
 To begin with:
 
@@ -57,7 +45,7 @@ To begin with:
 
 > docker run -tidp 80:80 -p 3306:3306 -p 2222:22 --name qloappsv150 -e USER_PASSWORD=qloappsuserpassword -e MYSQL_ROOT_PASSWORD=myrootpassword -e MYSQL_DATABASE=mydatabase webkul/qloapps_docker:latest
 
-3. In the above command, your Host port 80 is linked with the docker port 80 running apache and Host port 3306 is linked with the docker port 3306 running MySQL, you can change the ports of your Host as per your requirements. Also, your SSH port 2222 is mapped with docker port 22 running SSH server. Please ensure that no other services are running on these host ports.
+3. In the above command, your Host port 80 is linked with the docker port 80 running apache, you can change the ports of your Host as per your requirements. Please ensure that no other services are running on these host ports.
 
 4. Mention your mysql root password, database name, 'qloapps' user password in arguments MYSQL_ROOT_PASSWORD, MYSQL_DATABASE and 
 USER_PASSWORD respectively.
@@ -74,9 +62,9 @@ USER_PASSWORD respectively.
 
 9. To access your qloapps files and directories, you can SSH in your docker container as:
 
-> ssh qloapps@mention_your_ip -p 2222
+> docker exec -it qloappsv161 bash
 
-Note -: If you are running any other services on your host at port 80, 22 and 3306 then you have to mention other ports in step 2.
+Note -: If you are running any other services on your host at port 80 then you have to mention other ports in step 2.
 
 ## GETTING SUPPORT
 
